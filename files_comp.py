@@ -1,8 +1,8 @@
 import pandas as pd
 
 # Load the CSV files
-file1_path = '/Users/sanchittiwari/Downloads/bw_feed_1_july.csv'  # Replace with your actual file path
-file2_path = '/Users/sanchittiwari/Downloads/feed_gross_1_july.csv'  # Replace with your actual file path
+file1_path = '/Users/sanchittiwari/Downloads/bw_gross_2_july.csv'  # Replace with your actual file path
+file2_path = '/Users/sanchittiwari/Downloads/feed_gross_2_july.csv'  # Replace with your actual file path
 df1 = pd.read_csv(file1_path)
 df2 = pd.read_csv(file2_path)
 

@@ -1,8 +1,8 @@
 import pandas as pd
 
 # Load the CSV files
-file1_path = '/Users/sanchittiwari/Downloads/bw_feed_1_july.csv'  # Replace with your actual file path
-file2_path = '/Users/sanchittiwari/Downloads/feed_gross_1_july.csv'  # Replace with your actual file path
+file1_path = '/Users/sanchittiwari/Downloads/bw_def_2_july.csv'  # Replace with your actual file path
+file2_path = '/Users/sanchittiwari/Downloads/feed_def_2_july.csv'  # Replace with your actual file path
 df1 = pd.read_csv(file1_path)
 df2 = pd.read_csv(file2_path)
 
@@ -11,7 +11,7 @@ df1.columns = df1.columns.str.strip()
 df2.columns = df2.columns.str.strip()
 
 # Drop duplicates in file 1 based on the combination of 'JRCreateDate', 'SAP GL Code', and 'SOD CODE DESCRIPTION'
-unique_combinations = df1.drop_duplicates(subset=['JRCreateDate', 'SAP GL Code', 'SOD CODE DESCRIPTION'])
+unique_combinations = df1.drop_duplicates(subset=['Date', 'SAP GL Code', 'SOD CODE DESCRIPTION'])
 
 # Group by 'SAP GL Code' and aggregate descriptions in file 1
 grouped = unique_combinations.groupby('SAP GL Code')['SOD CODE DESCRIPTION'].apply(list).reset_index()
